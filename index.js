@@ -11,8 +11,8 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-const db = getDatabase(firebaseApp);
-const wishesInDB = ref(db, 'wishes');
+const database = getDatabase(firebaseApp);
+const wishesInDB = ref(database, 'wishes');
 
 const wishesForm = document.getElementById('form-message');
 wishesForm.addEventListener('submit', sendWishesToDB);
@@ -69,7 +69,7 @@ function renderList(wishesArr){
     div2.setAttribute('class', 'like-section');
 
     const i = document.createElement('i');
-    const targetObj = ref(db, `wishes/${wish[0]}`);
+    const targetObj = ref(database, `wishes/${wish[0]}`);
     
     if (wish[1].isLiked) {
       i.setAttribute('class', 'fa-solid fa-heart red');
@@ -77,9 +77,9 @@ function renderList(wishesArr){
       i.setAttribute('class', 'fa-solid fa-heart');
     }
 
-    i.setAttribute('data-id', wish[0]);
+    i.setAttribute('data-id', `${wish[0]}`);
     i.addEventListener('click', () => {
-      updateDataInDB(wish[1].countLikes, targetObj, wish[1].isLiked);
+      updateDataInDatabase(wish[1].countLikes, targetObj, wish[1].isLiked);
     });
 
     const span = document.createElement('span');
@@ -99,13 +99,14 @@ function renderList(wishesArr){
   });
 }
 
-function updateDataInDB(prevCountLikes, target, prevIsLiked){
-  const likes = prevIsLiked ? prevCountLikes - 1 : prevCountLikes + 1;
-
+function updateDataInDatabase(prevCountLikes, target, prevIsLiked) {
+  const likes = prevIsLiked 
+    ? prevCountLikes - 1 
+    : prevCountLikes + 1;
   update(target, {
     countLikes: likes,
     isLiked: !prevIsLiked,
-  })
+  });
 }
 
 getDataFromDB();
