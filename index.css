@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+  font-family: 'Varela Round', sans-serif;
+  box-sizing: border-box;
+}
+
+::selection{
+  background: #9CA3AF;
+  color: white;
+  border-radius: 5px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #fcf9f9;
+}
+
+header,
+main {
+  width: 320px;
+  margin: 1em auto;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  color: #04131c;
+}
+
+header p {
+  color: #04131c;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+header img {
+  width: 120px;
+}
+
+main textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+  padding: 1em;
+  background-color: white;
+  border-radius: 8px;
+  color: #04131c;
+  font-size: 1rem;
+  border: 1px solid;
+}
+
+main input {
+  width: 100%;
+  margin-top: 0.7em;
+  padding: 0.8em;
+  background-color: white;
+  border-radius: 8px;
+  color: #04131c;
+  font-size: 1rem;
+  border: 1px solid;
+}
+
+main input::placeholder {
+  color: #ccc3c3;
+  font-size: 1rem;
+}
+
+main button {
+  width: 100%;
+  margin-top: 0.7em;
+  padding: 0.8em;
+  font-weight: 700;
+  font-size: 22px;
+  background-color: white;
+  color: #04131c;
+  border-radius: 8px;
+}
+
+main button:hover {
+  background-color: #04131c;
+  color: white;
+  cursor: pointer;
+}
+
+main textarea::placeholder {
+  color: #ccc3c3;
+  font-size: 1rem;
+}
+
+section {
+  margin: 1em auto;
+  padding-bottom: 1em;
+}
+
+section h2 {
+  color: #04131c;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+li {
+  margin-top: 1em;
+  padding: 0.5em;
+  list-style: none;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+i {
+  cursor: pointer;
+}
+
+li h3,
+.message-text {
+  margin-top: 0.8em;
+  margin-left: 0.5em;
+}
+
+.message-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.like-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  overflow: hidden;
+  gap: 5px;
+}
+
+.count-likes {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-top: 0.07em;
+  font-size: 1.4rem;
+}
+
+.fa-heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.red {
+  color: red;
+}
+
+.empty-message {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #82d3ff;
+}
+
+footer {
+  text-align: center;
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+
+footer p {
+  color: #04131c;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+footer a {
+  color: #04131c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #82d3ff;
+}

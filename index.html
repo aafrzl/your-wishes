@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <title>Your Wishes</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/comic.png" alt="Comic">
+        <h1>Your Wishes</h1>
+        <p>What do you wish for?</p>
+    </header>
+    <main>
+        <section>
+            <form id="form-message">
+                <textarea id="message-textarea" placeholder="I wish for..." required></textarea>
+
+                <input id="name-input" type="text" placeholder="Your name" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>- Wishes -</h2>
+            <div class="ul-wrapper">
+                <ul id="messages-list"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Crafted by 
+            <a href="https://github.com/aafrzl" target="_blank">aafrzl
+            </a>
+            with 🖤 and ☕
+        </p>
+    </footer>
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
