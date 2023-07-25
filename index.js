@@ -56,7 +56,7 @@ function snapshot(snapshot) {
   }
 }
 
-function renderList(wishesArr){
+function renderList(wishesArr) {
   return wishesArr.map((wish) => {
     const h3Name = document.createElement('h3');
     const p1 = document.createElement('p');
@@ -70,10 +70,10 @@ function renderList(wishesArr){
 
     const i = document.createElement('i');
     const targetObj = ref(database, `wishes/${wish[0]}`);
-    
+
     if (wish[1].isLiked) {
       i.setAttribute('class', 'fa-solid fa-heart red');
-    }else{
+    } else {
       i.setAttribute('class', 'fa-solid fa-heart');
     }
 
@@ -100,13 +100,11 @@ function renderList(wishesArr){
 }
 
 function updateDataInDatabase(prevCountLikes, target, prevIsLiked) {
-  const likes = prevIsLiked 
-    ? prevCountLikes - 1 
-    : prevCountLikes + 1;
-  update(target, {
-    countLikes: likes,
-    isLiked: !prevIsLiked,
-  });
+  const newCountLikes = prevIsLiked ? prevCountLikes - 1 : prevCountLikes + 1;
+  const newIsLiked = !prevIsLiked;
+  const userLikes = getUserLikes(target);
+  const newCountLikesWithUser = newCountLikes + (userLikes.length > 0 ? 1 : 0);
+  update(target, { countLikes: newCountLikesWithUser, isLiked: newIsLiked });
 }
 
 getDataFromDB();
