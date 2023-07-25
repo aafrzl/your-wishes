@@ -100,11 +100,9 @@ function renderList(wishesArr) {
 }
 
 function updateDataInDatabase(prevCountLikes, target, prevIsLiked) {
-  const newCountLikes = prevIsLiked ? prevCountLikes - 1 : prevCountLikes + 1;
+  const newCountLikes = prevCountLikes + (prevIsLiked ? -1 : 1);
   const newIsLiked = !prevIsLiked;
-  const userLikes = getUserLikes(target);
-  const newCountLikesWithUser = newCountLikes + (userLikes.length > 0 ? 1 : 0);
-  update(target, { countLikes: newCountLikesWithUser, isLiked: newIsLiked });
+  update(target, { countLikes: newCountLikes, isLiked: newIsLiked });
 }
 
 getDataFromDB();
